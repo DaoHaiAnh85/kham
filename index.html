@@ -2,7 +2,7 @@
 <title>Bệnh viện Doanh nghiệp</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&display=swap">
 <style>
 /* Khoa Xét nghiệm — cùng nhận diện với website chính (xanh đậm #0B3D66, vàng #C99A2E), giấy khám là nền giấy sáng */
 :root{
@@ -11,7 +11,7 @@
   --gold:#C99A2E; --gold-soft:#F7EEDA; --gold-ink:#8A6512;
   --ok:#2C8A55; --ok-soft:#E3F3E9; --warn:#B7791F; --warn-soft:#FBF1DC; --bad:#B4382E; --bad-soft:#F9E5E2; --mute:#8193A8;
   --m1:#2E9656; --m2:#C9930F; --m3:#D8661C; --m4:#C23029;
-  --f-body:"Be Vietnam Pro","Segoe UI",Roboto,Arial,sans-serif; --f-head:"Plus Jakarta Sans","Be Vietnam Pro","Segoe UI",Arial,sans-serif;
+  --f-body:"Be Vietnam Pro","Segoe UI",Roboto,Arial,sans-serif; --f-head:"Plus Jakarta Sans","Be Vietnam Pro","Segoe UI",Arial,sans-serif; --f-display:"Fraunces",Georgia,"Times New Roman",serif;
   --shadow:0 1px 2px rgba(15,36,56,.06),0 8px 24px rgba(15,36,56,.07); --r:14px;
   color-scheme:light;
 }
@@ -22,6 +22,7 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--f-body);fo
 a{color:var(--accent);text-underline-offset:3px}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 h1,h2,h3,h4{font-family:var(--f-head);font-weight:700;line-height:1.18;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h1,h2{font-family:var(--f-display);font-weight:600;letter-spacing:-.022em;line-height:1.1}
 p{margin:0 0 12px}
 .wrap{max-width:1040px;margin:0 auto;padding-inline:clamp(16px,4vw,32px)}
 .narrow{max-width:780px}
@@ -32,15 +33,16 @@ p{margin:0 0 12px}
 
 /* thanh trên */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:rgba(245,248,251,.95);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;gap:12px;min-height:60px}
+.top .wrap{display:flex;align-items:center;gap:12px;min-height:68px}
 .brand{display:flex;align-items:center;gap:10px;text-decoration:none;color:var(--ink);min-width:0}
-.brand .mark{width:34px;height:34px;border-radius:9px;background:var(--accent);display:grid;place-items:center;flex:none;box-shadow:inset 0 -3px 0 var(--gold)}
-.brand b{font-family:var(--f-head);font-size:16.5px;display:block;line-height:1.15;white-space:nowrap}
+.brand .mark{width:38px;height:38px;border-radius:11px;background:var(--accent);display:grid;place-items:center;flex:none;box-shadow:inset 0 -3px 0 var(--gold)}
+.brand b{font-family:var(--f-display);font-weight:600;font-size:19px;display:block;line-height:1.1;white-space:nowrap;letter-spacing:-.01em}
 .brand small{display:block;font-size:11.5px;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .top nav{margin-left:auto;display:flex;gap:4px;align-items:center}
 .top nav a{font-size:14px;color:var(--ink-2);text-decoration:none;padding:8px 10px;border-radius:8px;white-space:nowrap}
 .top nav a:hover{background:var(--surface-2)}
-@media (max-width:640px){.top nav a.an-dt{display:none}.brand small{display:none}}
+@media (max-width:860px){.top nav a.an-dt{display:none}}
+@media (max-width:560px){.brand small{display:none}.brand b{font-size:16.5px}}
 @media (max-width:899px){.top nav a.an-hep{display:none}}
 .mini-wrap{display:grid;gap:18px;grid-template-columns:minmax(0,1fr) minmax(0,1.1fr);align-items:center}
 @media (max-width:760px){.mini-wrap{grid-template-columns:1fr}}
@@ -48,12 +50,12 @@ p{margin:0 0 12px}
 .mini-wrap .dong-dau{justify-self:start}
 
 /* nút, thẻ, chữ */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px/1.2 var(--f-body);padding:12px 18px;border-radius:11px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:background .15s,border-color .15s,transform .05s}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px/1.2 var(--f-body);padding:12px 20px;border-radius:999px;border:1px solid transparent;cursor:pointer;text-decoration:none;transition:background .15s,border-color .15s,transform .05s}
 .btn:active{transform:translateY(1px)}
 .btn.p{background:var(--accent);color:#fff}.btn.p:hover{background:var(--accent-deep)}
 .btn.v{background:var(--gold);color:#241700}.btn.v:hover{background:#b98b25}
 .btn.g{background:var(--surface);color:var(--accent);border-color:var(--line-2)}.btn.g:hover{border-color:var(--accent)}
-.btn.lg{font-size:16.5px;padding:15px 22px;border-radius:13px}
+.btn.lg{font-size:16.5px;padding:15px 24px;border-radius:999px}
 .btn.sm{font-size:13.5px;padding:8px 12px}
 .btn[disabled]{opacity:.55;cursor:not-allowed}
 .btn.top-cta{padding:9px 14px;font-size:14px}
@@ -370,10 +372,11 @@ code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.88em;
 /* bản 0.5: hai cửa vào, nhãn loại xét nghiệm, bảng tuân thủ, cờ đỏ, nhãn trong 2B */
 .cua2{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;margin-top:18px}
 @media (max-width:760px){.cua2{grid-template-columns:1fr}}
-.cua{display:flex;flex-direction:column;gap:8px;border-radius:20px;padding:22px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--surface);box-shadow:var(--shadow);transition:border-color .15s}
+.cua{display:flex;flex-direction:column;gap:10px;border-radius:20px;padding:26px;text-decoration:none;color:var(--ink);border:1px solid var(--line);background:var(--surface);box-shadow:none;transition:border-color .15s,transform .18s,box-shadow .18s}
+.cua:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(15,36,56,.12)}
 .cua:hover{border-color:var(--accent)}
 .cua.vd{background:linear-gradient(180deg,#FFFFFF,#F7FAFD);border-top:5px solid var(--accent)}
-.cua.tq{border-top:5px solid var(--gold)}
+.cua.tq{border-top:1px solid var(--line)}
 .cua h2{font-size:23px}
 .cua p{font-size:14.5px;color:var(--ink-2);margin:0}
 .cua ul{margin:2px 0 0;padding-left:18px;font-size:13.5px;color:var(--ink-2)}
@@ -409,12 +412,12 @@ code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.88em;
 .chuyen-khoa{margin-top:16px;border:1px solid var(--accent);background:var(--accent-soft);border-radius:14px;padding:14px 16px}
 .chuyen-khoa b{display:block;font:700 16px var(--f-head);margin-bottom:4px}
 .find.chuoi{border-left-color:var(--m4);background:#FFF7F6}
-.buoc-quy{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:14px}
-@media (max-width:820px){.buoc-quy{grid-template-columns:1fr 1fr}}
-@media (max-width:460px){.buoc-quy{grid-template-columns:1fr}}
-.buoc-quy div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
-.buoc-quy b{display:block;font:800 12.5px var(--f-head);color:var(--gold-ink);letter-spacing:.07em}
-.buoc-quy h3{font-size:15px;margin:2px 0}.buoc-quy p{font-size:13px;color:var(--ink-2);margin:0}
+.buoc-quy{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0;margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+@media (max-width:820px){.buoc-quy{grid-template-columns:1fr 1fr}.buoc-quy div{border-top:1px solid var(--line)}}
+@media (max-width:460px){.buoc-quy{grid-template-columns:1fr}.buoc-quy div{border-left:0}}
+.buoc-quy div{background:none;border:0;border-left:1px solid var(--line);border-radius:0;padding:22px 20px}.buoc-quy div:first-child{border-left:0}
+.buoc-quy b{display:block;font:600 30px/1 var(--f-display);color:var(--gold);letter-spacing:0}
+.buoc-quy h3{font-size:16px;margin:10px 0 4px}.buoc-quy p{font-size:14px;color:var(--ink-2);margin:0}
 .chu-giai{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 14px;font-size:13.5px;color:var(--ink-2)}
 .chu-giai b{color:var(--ink)}
 .xn-ds{display:grid;gap:10px;margin-top:10px}
@@ -525,10 +528,13 @@ code{font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:.88em;
 .vuong-khoi ul{margin:6px 0 0;padding-left:18px;display:grid;gap:3px}
 /* ===== bản ba cửa (bv 0.1) ===== */
 .tk{font:600 11px var(--f-body);color:var(--ink-3);letter-spacing:.04em;text-transform:uppercase;margin-left:6px;vertical-align:middle}
-.cua3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin-top:22px}
+.cua3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:auto;gap:16px;margin-top:22px}
+.cua3 .cua.tq{grid-column:1 / span 2;grid-row:1;background:var(--accent);border-color:var(--accent);padding:32px}
+.cua3 .cua.tq .eyebrow,.cua3 .cua.tq .di{color:#E9C877}.cua3 .cua.tq h2{color:#fff;font-size:clamp(26px,3vw,36px);max-width:18ch}.cua3 .cua.tq p,.cua3 .cua.tq .meta{color:#C9D7E6}
+.cua3 .cua.tq .di{display:inline-flex;align-items:center;justify-content:center;background:var(--gold);color:#241700;border-radius:999px;padding:11px 18px;font-size:15px;margin-top:4px;align-self:flex-start}
 .cua.ss{border-top:5px solid #8A3B5C}
 .cua .meta{font-size:13px;color:var(--ink-3);margin-top:auto;padding-top:8px}
-.cua3 .cua h2{font-size:21px}
+.cua3 .cua h2{font-size:22px}
 .cua2.ss2 .cua h2{font-size:21px}
 @media (max-width:900px){.cua3{grid-template-columns:minmax(0,1fr)}}
 .tang3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:14px}
@@ -684,6 +690,41 @@ section.wrap.narrow > .ket:first-child,section.wrap.narrow > form.ket:first-chil
 .cs-muc h2{font-size:18px;margin:0 0 8px}
 .cs-muc p,.cs-muc li{font-size:14.5px;color:var(--ink-2);line-height:1.6}
 .cs-muc ul{margin:0;padding-left:20px;display:grid;gap:6px}
+/* ===== giao diện 25/10/2026: trang đầu hướng "Phiếu khám" ===== */
+.hero-luoi{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);gap:44px;align-items:center;padding-block:clamp(28px,6vw,64px) 24px}
+@media (max-width:900px){.hero-luoi{grid-template-columns:minmax(0,1fr);gap:28px}}
+.hero-chu{display:flex;flex-direction:column;gap:20px;min-width:0}
+.hero-luoi h1{font-size:clamp(38px,5.8vw,74px);max-width:16ch;line-height:1.02}.hero-luoi h1 em{font-style:italic;color:var(--accent)}
+.hero-luoi .lede{font-size:clamp(17px,2vw,19px);color:var(--ink-2);max-width:56ch;margin:0}
+.hero-nut{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.cua3 .cua.tq .he-chip{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}.cua3 .cua.tq .he-chip span{font-size:12.5px;font-weight:600;color:#fff;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);border-radius:999px;padding:4px 10px}
+.cua3 .hua-bm{grid-column:2 / span 2;margin-top:0;align-self:stretch;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:14px;padding:26px}.cua3 .hua-bm p{flex:0 0 auto}
+@media (max-width:900px){.cua3 .cua.tq{grid-column:auto;grid-row:auto;min-height:0}.cua3 .hua-bm{grid-column:auto}}
+.dai-tin{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;padding-top:14px;border-top:1px solid var(--line);margin-top:4px}
+.dai-tin b{font:600 28px/1 var(--f-display);color:var(--ink);display:block}.dai-tin span{font-size:12.5px;color:var(--ink-3);display:block;margin-top:5px}
+.man{background:var(--surface);border:1px solid var(--line);border-radius:22px;padding:22px 22px 20px;display:flex;flex-direction:column;gap:14px;box-shadow:0 24px 60px rgba(15,36,56,.10);min-width:0}
+.man .dau{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.man .nhip{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;color:var(--ok);font-weight:600}
+.man .nhip::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--ok);animation:nhip 1.6s ease-in-out infinite}
+@keyframes nhip{0%,100%{opacity:1}50%{opacity:.2}}
+.man .dien-tim{display:block;width:100%;height:auto}
+.man .luoi{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.man .o{background:var(--bg);border-radius:14px;padding:12px 14px;display:flex;flex-direction:column;gap:3px;min-width:0}
+.man .o span{font-size:12.5px;color:var(--ink-3)}.man .o b{font:600 26px/1.1 var(--f-display);color:var(--ink)}.man .o b small{font:500 12.5px var(--f-body);color:var(--ink-3);margin-left:4px}
+.man .o i{font-style:normal;font-size:12.5px;font-weight:600;color:var(--accent)}.man .o i.vang{color:var(--gold-ink)}.man .o i.xam{color:var(--ink-2)}
+.man .chu-thich{font-size:12.5px;color:var(--ink-3);margin:0;line-height:1.5}.man .chu-thich a{font-weight:600}
+.dau-muc{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:4px}
+.dau-muc h2{font-size:clamp(26px,3.4vw,40px);margin:4px 0 0}.dau-muc p{margin:0;max-width:44ch}
+.hua-bm{display:flex;gap:18px;align-items:center;flex-wrap:wrap;background:var(--gold-soft);border:1px solid #EFE2BF;border-radius:var(--r);padding:18px 22px;margin-top:16px}
+.hua-bm svg{flex:none}.hua-bm p{margin:0;font-size:15px;flex:1 1 380px;min-width:0}.hua-bm a{font-weight:600;font-size:14.5px;white-space:nowrap}
+.so-lieu-khoi{display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1.1fr);gap:36px;align-items:center}
+@media (max-width:900px){.so-lieu-khoi{grid-template-columns:minmax(0,1fr)}}
+.so-lieu-khoi h2{font-size:clamp(26px,3.4vw,38px);margin:6px 0 10px}.so-lieu-khoi .lede2{color:var(--ink-2);font-size:16px;line-height:1.6;margin:0 0 16px}
+.bang-tv{width:100%;border-collapse:collapse;font-size:15px}.bang-tv th{font-size:12px;color:var(--ink-3);font-weight:600;letter-spacing:.04em;text-transform:uppercase;padding:8px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}
+.bang-tv td{padding:11px 10px;border-bottom:1px solid var(--line);text-align:right;white-space:nowrap}.bang-tv td:first-child,.bang-tv th:first-child{text-align:left;white-space:normal}.bang-tv tr:last-child td{border-bottom:0}
+.len{animation:len .5s ease-out both}.len.t2{animation-delay:.08s}.len.t3{animation-delay:.16s}
+@keyframes len{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.sec .faq-dau h2,.sec h2.lon{font-size:clamp(26px,3.4vw,38px)}
 </style>
 </head><body>
 <script>
@@ -2505,7 +2546,7 @@ function trangSSDuong(){
     });
 }
 </script>
-<header class="top"><div class="wrap"><a class="brand" href="#/"><span class="mark"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></svg></span><span><b>Bệnh viện Doanh nghiệp</b></span></a>
+<header class="top"><div class="wrap"><a class="brand" href="#/"><span class="mark"><svg width="18" height="18" viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3v14M3 10h14" stroke="#fff" stroke-width="3.4" stroke-linecap="round"/></svg></span><span><b>Bệnh viện Doanh nghiệp</b><small>Khám sức khoẻ doanh nghiệp bằng số liệu</small></span></a>
 <nav><a class="an-dt" href="#/cua/tong-quat">Tổng quát</a><a class="an-dt" href="#/cua/van-dong">Vận động</a><a class="an-dt" href="#/khoa-nhi">Khoa Nhi</a><a class="an-dt" href="#/tra-cuu">Tra cứu</a><a class="an-dt an-hep" href="https://daohaianh85.github.io/so_lieu/" target="_blank" rel="noopener">Số liệu niêm yết</a><a class="btn p top-cta" href="#/">Bắt đầu</a></nav></div></header>
 <main id="app"></main>
 <footer class="ft"><div class="wrap"><div class="hang" style="justify-content:space-between"><span><b>Bệnh viện Doanh nghiệp</b> · <span id="pbLab"></span></span><span class="hang"><a href="#/tra-cuu">Tra cứu</a><a href="https://daohaianh85.github.io/so_lieu/" target="_blank" rel="noopener">Số liệu niêm yết</a><a href="#/mau">Phiếu minh hoạ</a><a href="#/chinh-sach">Chính sách bảo mật</a></span></div><p class="tiny" style="margin:8px 0 0">Sổ Excel và câu trả lời được đọc, tính ngay trong trình duyệt; trang không gửi sổ hay dữ liệu từng nhân viên đi. Những gì được gửi đi — liên hệ bạn điền, phiếu PDF khi bạn bấm Gửi thư, số liệu tổng hợp khi bạn đặt người đọc, câu gõ vào khung Trợ lý AI — ghi rõ ở Chính sách bảo mật; khung Trợ lý AI là ngoại lệ so với lời hứa dữ liệu không rời máy, đừng gõ dữ liệu nhân viên vào đó. Phiếu kết quả xét nghiệm ghi con số và lời đọc sơ bộ của máy; mức, khoảng tham chiếu và kết luận chỉ có ở phiếu chẩn đoán có chữ ký chuyên gia. Giai đoạn thử: miễn phí cho 20 doanh nghiệp có thoả thuận riêng, chưa thu tiền, chưa xuất hoá đơn; mọi giá trên trang là giá tham khảo. Phiếu minh hoạ là ca hư cấu. Khám sức khoẻ doanh nghiệp bằng số liệu — không phải dịch vụ y tế, không phải tư vấn pháp lý.</p></div></footer>
@@ -2662,8 +2703,8 @@ function theMD(m){ var g = giaChon(m.goi_y, m.ma), vien = vienCua(chonDu(m.goi_y
   return '<a class="md-the" href="#/chon/' + m.ma + '"><h3>' + esc(m.ten) + '</h3><p>' + esc(m.hoi) + '</p><div class="meta">' + g.so_xn + ' xét nghiệm · ' + vien.map(function(v){ return esc(VIEN_LAB[v].he); }).join(', ') + '<br>' + esc(m.cach) + ' · ' + esc(m.tg) + '</div><div class="gia-md"><b>' + giaTK(g.tong) + '</b></div><span class="di">Xem gợi ý →</span></a>'; }
 function theNhom(m){ var g = giaChon(m.goi_y, m.ma);
   return '<a class="md-the nh" href="#/nhom/' + m.ma + '"><span class="eyebrow">' + (m.loai === 'vt' ? 'Bạn đang ngồi ghế' : 'Doanh nghiệp của bạn là') + '</span><h3>' + esc(m.ten) + '</h3><ul class="vuong">' + m.vuong.slice(0, 1).map(function(v){ return '<li>' + esc(v) + '</li>'; }).join('') + '</ul><div class="meta">' + g.so_xn + ' xét nghiệm · ' + esc(m.cach) + '</div><div class="gia-md"><b>' + giaTK(g.tong) + '</b></div><span class="di">Xem gợi ý →</span></a>'; }
-function theCua(c){ return '<a class="cua ' + c.ma + '" href="' + c.bat_dau + '"><span class="eyebrow">' + esc(c.ten) + '</span><h2>' + esc(c.cau) + '</h2><p>' + esc(c.cho) + '</p><div class="meta">' + esc(c.tg) + (c.ma === 'ss' ? ' · miễn phí' : ' · kết quả sơ bộ miễn phí') + '</div><span class="di">' + (c.ma === 'ss' ? 'Vào Khoa Nhi →' : 'Vào ' + esc(c.ten.toLowerCase()) + ' →') + '</span></a>'; }
-function quyTrinhHtml(){ return '<section class="sec wrap"><span class="eyebrow">Quy trình</span><h2>Năm bước, mỗi bước một việc</h2><div class="buoc-quy">' +
+function theCua(c){ return '<a class="cua ' + c.ma + '" href="' + c.bat_dau + '"><span class="eyebrow">' + esc(c.ten) + '</span><h2>' + esc(c.cau) + '</h2><p>' + esc(c.cho) + '</p>' + (c.ma === 'tq' && typeof THU_TU_VIEN !== 'undefined' ? '<div class="he-chip" aria-label="Tám hệ cơ quan">' + THU_TU_VIEN.map(function(k){ return VIEN_LAB[k] ? '<span>' + esc(VIEN_LAB[k].he) + '</span>' : ''; }).join('') + '</div>' : '') + '<div class="meta">' + esc(c.tg) + (c.ma === 'ss' ? ' · miễn phí' : ' · kết quả sơ bộ miễn phí') + '</div><span class="di">' + (c.ma === 'ss' ? 'Vào Khoa Nhi →' : 'Vào ' + esc(c.ten.toLowerCase()) + ' →') + '</span></a>'; }
+function quyTrinhHtml(){ return '<section class="sec wrap"><span class="eyebrow">Quy trình</span><h2 class="lon">Năm bước, mỗi bước một việc</h2><div class="buoc-quy">' +
   '<div><b>1</b><h3>Chọn</h3><p>Chọn nơi khám, rồi chọn theo bạn là ai hoặc điều đang lo. Khoa gợi ý sẵn.</p></div>' +
   '<div><b>2</b><h3>Nộp dữ liệu</h3><p>Tải sổ Excel hoặc gõ số. Đọc ngay trên máy bạn, không gửi đi.</p></div>' +
   '<div><b>3</b><h3>Kết quả sơ bộ</h3><p>Miễn phí. Số được che, mỗi xét nghiệm cho xem thử một con số.</p></div>' +
@@ -2706,11 +2747,37 @@ function faqHtml(loai){
   return '<section class="sec wrap narrow faq" data-faq="' + (BO[loai] ? loai : 'chu') + '"><span class="eyebrow">Hỏi nhanh</span><h2>' + b[0] + '</h2>' +
     b[1].map(function(q){ return '<details><summary>' + q[0] + '</summary><p>' + q[1] + '</p></details>'; }).join('') + '</section>';
 }
+/* ---------- trang đầu, giao diện 25/10/2026: màn theo dõi (ví dụ công ty hư cấu, mốc ngành bất động sản 2025 từ trang Số liệu niêm yết) ---------- */
+var SO_LIEU_URL = 'https://daohaianh85.github.io/so_lieu/';
+var TV_NGANH_2025 = [['Xây dựng và vật liệu', 121, '9,2%', '21,2'], ['Hàng và dịch vụ công nghiệp', 99, '13,7%', '23,4'], ['Bất động sản', 78, '8,5%', '24,5'], ['Điện, nước, khí đốt', 55, '6,3%', '26,4'], ['Ngân hàng', 24, '19,0%', '33,3'], ['Bán lẻ', 15, '5,1%', '17,0']];   /* trung vị 2025, cập nhật 25/10/2026 cùng bộ số vòng 9 */
+function manTheoDoiHtml(){
+  return '<aside class="man len t3" aria-label="Màn theo dõi, ví dụ công ty hư cấu"><div class="dau"><span class="eyebrow">Màn theo dõi · ví dụ công ty hư cấu</span><span class="nhip">đang đọc sổ</span></div>' +
+    '<svg class="dien-tim" viewBox="0 0 520 110" role="img" aria-label="Đường điện tim minh hoạ: chi phí nhân sự trên doanh thu qua sáu năm"><g stroke="#E6ECF3"><line x1="0" y1="28" x2="520" y2="28"/><line x1="0" y1="56" x2="520" y2="56"/><line x1="0" y1="84" x2="520" y2="84"/></g><path d="M0 66 L60 64 L120 68 L150 36 L165 92 L180 52 L240 58 L300 56 L330 28 L345 96 L360 60 L420 62 L480 59 L520 61" fill="none" stroke="#0B3D66" stroke-width="2.5" stroke-linejoin="round"/><path d="M0 72 L520 62" fill="none" stroke="#C99A2E" stroke-width="1.5" stroke-dasharray="5 5"/><circle cx="520" cy="61" r="5" fill="#0B3D66"/></svg>' +
+    '<div class="luoi"><div class="o"><span>Chi phí nhân sự / doanh thu</span><b class="num">9,8%</b><i>cao hơn 53% doanh nghiệp cùng ngành</i></div>' +
+    '<div class="o"><span>Thu nhập bình quân</span><b class="num">20,9<small>tr/người/tháng</small></b><i class="vang">trung vị ngành 24,5</i></div>' +
+    '<div class="o"><span>Doanh thu mỗi người</span><b class="num">2,55<small>tỷ/năm</small></b><i class="xam">ngành 3,70</i></div>' +
+    '<div class="o"><span>HCROI</span><b class="num">2,44<small>lần</small></b><i class="xam">ngành 3,42</i></div></div>' +
+    '<p class="chu-thich">Kết quả sơ bộ hiện vị trí. Mức, khoảng tham chiếu và kết luận chỉ có ở phiếu chẩn đoán có chữ ký chuyên gia. <a href="' + SO_LIEU_URL + 'mau/bat-dong-san/?utm_source=kham&amp;utm_campaign=man-theo-doi" target="_blank" rel="noopener">Xem bản mẫu đầy đủ →</a></p></aside>'; }
+function huaBaoMatHtml(){
+  return '<div class="hua-bm"><svg width="40" height="40" viewBox="0 0 44 44" aria-hidden="true"><circle cx="22" cy="22" r="21" fill="#fff" stroke="#C99A2E" stroke-width="1.5"/><path d="M12 24l6 6 14-16" fill="none" stroke="#0B3D66" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+    '<p><b>Sổ không rời máy bạn.</b> Sổ Excel và câu trả lời được đọc, tính ngay trong trình duyệt; trang không gửi sổ hay dữ liệu từng nhân viên đi. Những gì được gửi đi ghi rõ ở chính sách bảo mật.</p><a href="#/chinh-sach">Đọc chính sách bảo mật →</a></div>'; }
+function soLieuHtml(){
+  return '<section class="sec wrap" id="so-lieu-niem-yet"><div class="so-lieu-khoi"><div><span class="eyebrow">Số liệu niêm yết · trang riêng</span><h2>Mốc để so là thật: 705 doanh nghiệp, sáu năm, từng con số có nguồn</h2>' +
+    '<p class="lede2">Chi phí nhân sự, lao động, thu nhập bình quân và năng suất đọc từ báo cáo tài chính đã kiểm toán 2020–2025. Tra một mã để xem doanh nghiệp so với trung vị ngành; muốn sâu hơn thì có gói ngành và bản mẫu bảng điều khiển.</p>' +
+    '<div class="hang"><a class="btn p" href="' + SO_LIEU_URL + '?utm_source=kham&amp;utm_campaign=trang-dau" target="_blank" rel="noopener">Mở trang Số liệu niêm yết</a><a class="btn g" href="' + SO_LIEU_URL + 'mau/bat-dong-san/?utm_source=kham&amp;utm_campaign=trang-dau" target="_blank" rel="noopener">Xem thử gói Bất động sản</a></div></div>' +
+    '<div class="card" style="padding:18px 20px"><div class="hang" style="justify-content:space-between;margin-bottom:6px"><b style="font-size:15px">Trung vị theo ngành, năm 2025</b><span class="tiny muted">chi phí nhân sự / doanh thu · thu nhập bình quân</span></div><div style="overflow-x:auto"><table class="bang-tv num"><thead><tr><th>Ngành</th><th>Số DN</th><th>CP nhân sự / DT</th><th>Thu nhập (tr/tháng)</th></tr></thead><tbody>' +
+    TV_NGANH_2025.map(function(r){ return '<tr><td>' + esc(r[0]) + '</td><td>' + r[1] + '</td><td><b>' + r[2] + '</b></td><td>' + r[3] + '</td></tr>'; }).join('') +
+    '</tbody></table></div><p class="tiny muted" style="margin:10px 0 0">Trung vị: một nửa số doanh nghiệp trong ngành cao hơn, một nửa thấp hơn. 18 nhóm ngành, xem đủ ở trang Số liệu.</p></div></div></section>'; }
 function trangChu(){
-  ve('<section class="hero wrap" style="padding-bottom:4px"><span class="eyebrow">Bệnh viện Doanh nghiệp</span><h1>Doanh nghiệp của bạn đang ở đâu?</h1><p class="lede">Ba nơi khám, mỗi nơi một câu hỏi. Trả lời bằng sổ Excel hoặc vài con số, xem kết quả sơ bộ miễn phí' + (THU ? '; giai đoạn thử mở toàn bộ cũng miễn phí.' : ', trả tiền khi muốn mở toàn bộ.') + '</p>' +
-      '<div class="cua3">' + CUA_LAB.map(theCua).join('') + '</div></section>' +
-    quyTrinhHtml() +
-    '<section class="sec wrap"><div class="lab-hero" style="align-items:start"><div><span class="eyebrow">Đã có hồ sơ?</span><h2 style="font-size:24px;margin:6px 0">Tra cứu kết quả</h2><p class="small muted">Nhập mã hồ sơ và mã bảo mật trên biên nhận. Hồ sơ lưu trên thiết bị đã nộp dữ liệu 90 ngày; bản lưu lâu dài là phiếu PDF. Chưa chắc? Xem <a href="#/mau">phiếu kết quả minh hoạ</a> của một công ty hư cấu.</p></div>' + formTraCuu('fTra') + '</div></section>' +
+  var tq = CUAM_LAB.tq || {};
+  ve('<section class="wrap hero-luoi"><div class="hero-chu"><span class="eyebrow len">Bệnh viện Doanh nghiệp' + (THU ? ' · giai đoạn thử miễn phí' : '') + '</span><h1 class="len t2">Doanh nghiệp của bạn <em>đang ở đâu?</em></h1><p class="lede len t3">Ba nơi khám, mỗi nơi một câu hỏi. Trả lời bằng sổ Excel hoặc vài con số, máy đọc ngay trên trình duyệt và trả kết quả sơ bộ' + (THU ? '; giai đoạn thử mở toàn bộ cũng miễn phí.' : ', trả tiền khi muốn mở toàn bộ.') + ' Mốc để so là 705 doanh nghiệp niêm yết.</p>' +
+      '<div class="hero-nut len t3"><a class="btn p lg" href="' + (tq.bat_dau || '#/cua/tong-quat') + '">Khám tổng quát, 20 phút</a><a class="btn g lg" href="' + SO_LIEU_URL + '?utm_source=kham&amp;utm_campaign=hero" target="_blank" rel="noopener">Xem trung vị ngành trước</a></div>' +
+      '<div class="dai-tin len t3"><div><b class="num">705</b><span>doanh nghiệp niêm yết làm mốc</span></div><div><b class="num">92.836</b><span>con số đọc từ báo cáo kiểm toán</span></div><div><b>0 ₫</b><span>kết quả sơ bộ, không cần tài khoản</span></div></div></div>' +
+      manTheoDoiHtml() + '</section>' +
+    '<section class="sec wrap" style="padding-top:10px"><div class="dau-muc"><div><span class="eyebrow">Ba nơi khám</span><h2>Chọn theo bạn là ai, không theo tên dịch vụ</h2></div><p class="small muted">Mỗi nơi một câu hỏi, một bộ số cần chuẩn bị, một phiếu kết quả riêng.</p></div>' +
+      '<div class="cua3">' + CUA_LAB.map(theCua).join('') + huaBaoMatHtml() + '</div></section>' +
+    quyTrinhHtml() + soLieuHtml() +
+    '<section class="sec wrap"><div class="lab-hero" style="align-items:start"><div><span class="eyebrow">Đã có hồ sơ?</span><h2 style="font-size:28px;margin:6px 0">Tra cứu kết quả</h2><p class="small muted">Nhập mã hồ sơ và mã bảo mật trên biên nhận. Hồ sơ lưu trên thiết bị đã nộp dữ liệu 90 ngày; bản lưu lâu dài là phiếu PDF. Chưa chắc? Xem <a href="#/mau">phiếu kết quả minh hoạ</a> của một công ty hư cấu.</p></div>' + formTraCuu('fTra') + '</div></section>' +
     faqHtml('chu'), function(){ $('#fTra').addEventListener('submit', function(e){ e.preventDefault(); traCuu(this.sid.value, this.bm.value, this); }); });
   suKien('vao_trang', { man_hinh: window.innerWidth < 700 ? 'điện thoại' : 'máy tính' });
 }
